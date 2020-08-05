@@ -1,0 +1,45 @@
+<div *ngIf="card" class="card">
+    <img [src]="card.imageUrlHiRes" alt="">
+    <div class="card__info">
+        <div class="card__info-name">{{card.name}}</div>
+        <div class="card__info-id">{{card.id}}</div>
+        <div class="card__info-type">
+            <ng-container *ngFor="let type of card.types; let isFirst = first">
+                <ng-container *ngIf="isFirst">{{type}}</ng-container>
+                <ng-container *ngIf="!isFirst"> | {{type}}</ng-container>
+            </ng-container>
+        </div>
+        <div class="card__info-attacks">
+            <span>Attacks:</span>
+            <div *ngFor="let attack of card.attacks" class="attack">
+                <span>{{attack.name}}</span>
+                <span class="attack-cost">
+                    <ng-container *ngFor="let type of attack.cost; let isFirst = first">
+                        <ng-container *ngIf="isFirst">{{type}}</ng-container>
+                        <ng-container *ngIf="!isFirst"> | {{type}}</ng-container>
+                    </ng-container>
+                </span>
+                <span>{{attack.damage}}</span>
+                <span class="attack-description">{{attack.text}}</span>
+            </div>
+        </div>
+        <div class="card__info-resistances">
+            <span>Resistances:</span>
+            <div class="resistance">
+                <ng-container *ngFor="let resistance of card.resistances; let isFirst = first">
+                    <ng-container *ngIf="isFirst">{{ resistance.value }} {{ resistance.type }}</ng-container>
+                    <ng-container *ngIf="!isFirst"> | {{ resistance.value }} {{ resistance.type }}</ng-container>
+                </ng-container>
+            </div>
+        </div>
+        <div class="card__info-weaknesses">
+            <span>Weaknesses:</span>
+            <div class="weakness">
+                <ng-container *ngFor="let weakness of card.weaknesses; let isFirst = first" class="weakness">
+                    <ng-container *ngIf="isFirst">{{ weakness.value }} {{ weakness.type }}</ng-container>
+                    <ng-container *ngIf="!isFirst"> | {{ weakness.value }} {{ weakness.type }}</ng-container>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

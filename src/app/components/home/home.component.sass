@@ -1,0 +1,64 @@
+@import '../../../styles.sass'
+    
+.content
+    padding: 20px
+
+    .toolbar
+        @include flex-dc-ac
+        padding: 10px
+
+        &__search
+            @include flex-ac
+
+            input
+                border: solid 2px var(--lightGrayTone)
+                border-radius: var(--borderRadius)
+                padding: 5px 25px 5px 5px
+
+                &:focus
+                    outline: none !important
+
+            i
+                color: var(--lightGrayTone)
+                position: relative
+                right: 25px
+
+        &__controls
+            @include flex-jc-ac
+            margin-top: 20px
+
+            i
+                color: var(--lightGrayTone)
+                cursor: pointer
+                margin: 0px 5px 0px 5px
+    
+    .card-list
+        @include flex-jc
+        flex-wrap: wrap
+        margin-top: 10px
+
+        .card
+            @include flex-dc
+            margin: 15px
+            cursor: pointer
+            width: 150px
+
+            img
+                width: 150px
+                height: 200px
+
+            &__property
+                @include flex-dc
+                font-size: 12px
+                padding: 5px
+
+                &-title
+                    font-weight: 700
+                    color: var(--titleTone)
+
+                &-value
+                    @include flex-dc
+                    font-weight: 700
+                    color: var(--lightGrayTone)
+
+        

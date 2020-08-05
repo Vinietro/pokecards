@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PokeCard"
+    }
+  },
+  "defaultProject": "PokeCard",
+  "cli": {
+    "analytics": "2fc00183-da5c-4d5e-9a14-8a9e5547da3c"
+  }
 }

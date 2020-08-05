@@ -1,0 +1,27 @@
+<div class="content">
+    <div class="toolbar">
+        <div class="toolbar__search">
+            <input type="text" (keyup)="searchCard($event.target.value)">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="toolbar__controls">
+            <i class="fas fa-arrow-left" (click)="previousPage()"></i>
+            <i class="fas fa-arrow-right" (click)="nextPage()"></i>
+        </div>
+    </div>
+    <div class="card-list">
+        <div *ngFor="let card of cardList" class="card" (click)="showCard(card.id)">
+            <img [src]="card.imageUrl" alt="">
+            <div class="card__property">
+                <span class="card__property-title">{{ card.name }}</span>
+                <span class="card__property-title">{{ card.id }}</span>
+                <span class="card__property-value">
+                    <ng-container *ngFor="let type of card.types; let isFirst = first">
+                        <ng-container *ngIf="isFirst">{{type}}</ng-container>
+                        <ng-container *ngIf="!isFirst"> | {{type}}</ng-container>
+                    </ng-container>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

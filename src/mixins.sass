@@ -1,0 +1,42 @@
+//------------------------------------------//
+// # MEDIA SCREEN MINIMO
+//------------------------------------------//
+@mixin min-1200 
+    @media only screen and (min-width: 1099px)
+        @content  
+
+//------------------------------------------//
+// # MEDIA SCREEN MAXIMO
+//------------------------------------------//
+@mixin max-1200 
+    @media only screen and (max-width: 1099px)
+        @content  
+
+@mixin max-1366 
+    @media only screen and (max-width: 1370px)
+        @content     
+
+//------------------------------------------//
+// # FLEX
+//------------------------------------------//
+@mixin flex-jc
+    display: flex
+    justify-content: center
+
+@mixin flex-ac
+    display: flex
+    align-items: center
+    
+@mixin flex-jc-ac
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin flex-dc
+    display: flex
+    flex-direction: column
+
+@mixin flex-dc-ac
+    display: flex
+    flex-direction: column
+    align-items: center    

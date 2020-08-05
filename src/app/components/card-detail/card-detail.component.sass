@@ -1,0 +1,85 @@
+@import '../../../styles.sass'
+
+.card
+    padding: 5% 15%    
+    flex-wrap: wrap
+    @include flex-ac
+
+    img
+        width: 350px
+        height: 500px
+
+    &__info
+        margin-left: 25px
+        height: 100%
+        max-width: 60%
+        font-weight: 700
+        align-self: start
+
+        &-name           
+            color: var(--titleTone)
+
+        &-id           
+            color: var(--titleTone)
+
+        &-type           
+            color: var(--titleHoverTone)
+
+        &-attacks          
+            color: var(--titleTone)
+
+            .attack
+                padding: 5px
+                @include flex-dc
+
+                &-cost
+                    color: var(--titleHoverTone)
+
+                &-description
+                    color: var(--titleHoverTone)
+
+        &-resistances           
+            color: var(--titleTone)
+
+            .resistance
+                padding: 5px                
+                color: var(--titleHoverTone)
+                @include flex-dc
+
+
+        &-weaknesses           
+            color: var(--titleTone)            
+
+            .weakness
+                padding: 5px                
+                color: var(--titleHoverTone)
+                @include flex-dc
+
+
+@include max-1200
+    .card
+        justify-content: center
+        padding: 5%
+
+        img
+            width: 250px
+            height: 400px
+
+        &__info
+            max-width: 90%
+            margin: 20px 0px 0px 0px
+
+@include max-1366
+    @include min-1200
+        .card
+            justify-content: center
+            padding: 5%
+
+            img
+                width: 350px
+                height: 500px
+
+            &__info
+                max-width: 70%
+                align-self: start
+                margin-left: 25px

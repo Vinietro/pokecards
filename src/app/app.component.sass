@@ -1,0 +1,35 @@
+@import '../styles.sass'
+
+.header
+    position: fixed
+    z-index: 1
+    top: 0px
+
+    header        
+        background: var(--grad-primary-0)
+        width: 100vw
+        height: 50px
+        padding: 15px 0px 15px 0px     
+        @include flex-jc-ac  
+
+        a
+            text-decoration: none
+
+    &__logo
+        @include flex-ac
+
+        img
+            height: 50px
+    
+    &__title
+        color: var(--titleTone)
+        font-size: 24px
+        font-weight: 700
+        margin-left: 0.8rem
+    
+        &:hover
+            color: var(--titleHoverTone)
+
+.router
+    margin-top: 70px
+
